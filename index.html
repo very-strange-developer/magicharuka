@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div style="text-align:center">
+            <h1>마법의 하루카고둥</h1>
+            <img src="images/haruka.png"></img><br>
+            <input type="text" value="여기에 입력" id="textfield" class="btn-hover color-2"></input>
+            <input type="button" value="답을 주세요" id="submit" class="btn-hover color-4" onclick="submit_onclick();"></input>
+        </div>
+    </body>
+    <script>
+        function submit_onclick() {
+            var input_value = document.getElementById("textfield").value;
+            var input_length = input_value.length;
+            var sum = 0;
+            for(i=0;i<input_length;i++){
+                sum += input_value.charCodeAt(i);
+            }
+            if(sum%2==0){
+                //안돼
+                var audio = new Audio('audios/no.wav');
+                audio.play();
+            }else{
+                //돼
+                var audio = new Audio('audios/ok.wav');
+                audio.play();
+            }
+        }
+    </script>
+</html>
