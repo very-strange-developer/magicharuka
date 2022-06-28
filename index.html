@@ -13,6 +13,8 @@
         </div>
     </body>
     <script>
+        var audiono = new Audio('audios/no.wav');
+        var audiook = new Audio('audios/ok.wav');
         function submit_onclick() {
             var input_value = document.getElementById("textfield").value;
             var input_length = input_value.length;
@@ -22,12 +24,10 @@
             }
             if(sum%2==0){
                 //안돼
-                var audio = new Audio('audios/no.wav');
-                audio.play();
+                audiono.play();
             }else{
                 //돼
-                var audio = new Audio('audios/ok.wav');
-                audio.play();
+                audiook.play();
             }
         }
     </script>
